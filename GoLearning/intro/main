@@ -1,0 +1,90 @@
+/*
+WEEK 1;-Hello world in go
+What is  GoPath and go modules (go.mod)
+##What is a GOPATH?
+It's an environment variable that defines a workspace directory for Go code.
+#Inside it, Go expects three subfolders:
+GOPATH/
+├── src/     → source code
+├── pkg/     → compiled packages
+└── bin/     → compiled binaries (executables)
+
+Example:
+If GOPATH is C:\Users\you\go, then Go source files would be placed like:
+C:\Users\you\go\src\github.com\yourname\projectname\
+
+##Why It’s Mostly Obsolete:
+
+It forced rigid project structure.
+Hard to manage dependencies cleanly (you had to put everything in the src folder).
+No versioning for dependencies.
+##what are Go modules /Go mod?
+Go modules are a way to manage dependencies in Go projects, introduced in Mordern Go (1.11+).
+They allow you to define project dependencies in a file called go.mod, which is located at the root of your project.
+Each project has its own versioned dependencies managed in a file: go.mod.
+
+	Example:
+
+my-app/
+├── go.mod
+├── go.sum
+└── main.go
+
+🔧 Creating a Module:
+
+**go mod init my-app**
+
+go.mod contains:
+
+**module my-app
+go 1.21
+require (   github.com/gin-gonic/gin v1.8.2)**
+
+##Benefits of Modules:
+You can put your code anywhere on your system.
+Dependency versions are tracked.
+No need to manually manage $GOPATH.
+Easier to share and build projects across machines.
+*/
+package main
+
+import "fmt"
+
+func main() { fmt.Println(" DAY 1:Jambo, Uhali gani?") }
+
+/*
+## go run
+Think of it as:
+“Just run my program right now!”
+Use it when:
+You want to quickly test or run your Go code without building an actual file.
+
+Example:
+If you have a file called main.go:
+**go run main.go**
+Or in a folder:
+**go run .**
+This will run your code, and you'll see the output right away.
+Nothing is saved or installed — it just runs and quits.
+
+##go build
+Think of it as:
+“Build my program into an app I can run later.”
+Use it when:
+You want to compile your Go code into an executable file (a .exe file on Windows, for example).
+
+Example:
+go build
+If your code is in main.go, this will create a file named something like main.exe (Windows) or just main (Linux/macOS) that you can run:
+.\main.exe
+
+### go test
+Think of it as:
+“Run the tests I wrote to make sure everything works.”
+Use it when:
+You want to check if your code works correctly by running Go test files (files ending in _test.go).
+
+Example:
+##go test
+Go will look for files like math_test.go, run the tests inside, and tell you if they pass or fail.
+*/
