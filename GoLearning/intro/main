@@ -1,9 +1,9 @@
 /*
 WEEK 1;-Hello world in go
 What is  GoPath and go modules (go.mod)
-##What is a GOPATH?
+What is a GOPATH?
 It's an environment variable that defines a workspace directory for Go code.
-#Inside it, Go expects three subfolders:
+Inside it, Go expects three subfolders:
 GOPATH/
 ├── src/     → source code
 ├── pkg/     → compiled packages
@@ -13,7 +13,7 @@ Example:
 If GOPATH is C:\Users\you\go, then Go source files would be placed like:
 C:\Users\you\go\src\github.com\yourname\projectname\
 
-##Why It’s Mostly Obsolete:
+Why It’s Mostly Obsolete:
 
 It forced rigid project structure.
 Hard to manage dependencies cleanly (you had to put everything in the src folder).
@@ -40,7 +40,7 @@ go.mod contains:
 go 1.21
 require (   github.com/gin-gonic/gin v1.8.2)**
 
-##Benefits of Modules:
+Benefits of Modules:
 You can put your code anywhere on your system.
 Dependency versions are tracked.
 No need to manually manage $GOPATH.
@@ -53,7 +53,7 @@ import "fmt"
 func main() { fmt.Println(" DAY 1:Jambo, Uhali gani?") }
 
 /*
-## go run
+go run
 Think of it as:
 “Just run my program right now!”
 Use it when:
@@ -67,7 +67,7 @@ Or in a folder:
 This will run your code, and you'll see the output right away.
 Nothing is saved or installed — it just runs and quits.
 
-##go build
+go build
 Think of it as:
 “Build my program into an app I can run later.”
 Use it when:
@@ -78,13 +78,13 @@ go build
 If your code is in main.go, this will create a file named something like main.exe (Windows) or just main (Linux/macOS) that you can run:
 .\main.exe
 
-### go test
+go test
 Think of it as:
 “Run the tests I wrote to make sure everything works.”
 Use it when:
 You want to check if your code works correctly by running Go test files (files ending in _test.go).
 
 Example:
-##go test
+go test
 Go will look for files like math_test.go, run the tests inside, and tell you if they pass or fail.
 */
